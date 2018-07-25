@@ -71,7 +71,7 @@ public class CalculadoraSalarioTest {
 		assertEquals(new BigDecimal(180.00).setScale(2, BigDecimal.ROUND_HALF_UP),
 				calculadora.getValorINSS(new BigDecimal(2000.00).setScale(2, BigDecimal.ROUND_HALF_UP)));
 		assertEquals(new BigDecimal(254.06).setScale(2, BigDecimal.ROUND_HALF_UP),
-				calculadora.getValorINSS(new BigDecimal(2822.90)));
+				calculadora.getValorINSS(new BigDecimal(2822.90).setScale(2, BigDecimal.ROUND_HALF_UP)));
 
 		assertEquals(new BigDecimal(310.52).setScale(2, BigDecimal.ROUND_HALF_UP),
 				calculadora.getValorINSS(new BigDecimal(2822.91).setScale(2, BigDecimal.ROUND_HALF_UP)));
