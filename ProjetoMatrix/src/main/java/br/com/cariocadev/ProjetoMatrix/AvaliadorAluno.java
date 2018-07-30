@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 
 public class AvaliadorAluno {
 
+	/*
+	* Não esta validando se a nota esta abaixo de zero ou maior que dez
+	* Como desafio fazer a implementação sem o uso de for
+	*/
 	public BigDecimal getMaiorNota(BigDecimal[] notas) {
 		
 		if(notas == null) {
@@ -21,6 +25,10 @@ public class AvaliadorAluno {
 		}		
 	}
 
+	
+	/*
+	 * Encapsular o método de validação das notas
+	 */
 	public BigDecimal getMedia(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		
 		if(nota1 == null || nota2 == null || nota3 == null) {
@@ -33,6 +41,8 @@ public class AvaliadorAluno {
 				throw new IllegalArgumentException();
 			} else {
 			
+				// Retornar diretamente o valor da média sem a necessidade de
+				// uma variável de retorno (media)
 				BigDecimal somaNotas = nota1.add(nota2.add(nota3));
 				somaNotas = somaNotas.setScale(2, BigDecimal.ROUND_HALF_UP);
 				
@@ -45,6 +55,10 @@ public class AvaliadorAluno {
 		}
 	}
 
+	/*
+	 * Dê preferencia para usar else if ao invés de aninhar dentro de 
+	 * outro else.
+	 */
 	public String getStatus(BigDecimal nota1, BigDecimal nota2, BigDecimal nota3) {
 		
 		String status;
@@ -63,7 +77,4 @@ public class AvaliadorAluno {
 		
 		return status;
 	}
-	
-	
-
 }
