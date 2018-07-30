@@ -14,6 +14,13 @@ public class CalculadoraSalario {
 		return salarioLiquido.setScale(2, BigDecimal.ROUND_HALF_UP);
 	}
 
+	/*
+	 * Dê preferencia para usar else if ao invés de aninhar dentro de 
+	 * outro else.
+	 * 
+	 * Como desafio gostaria de ver uma nova implementação desse método sem o uso de ifs em cascata.
+	 * Veja sobre Java 8 (filter)  
+	 */
 	public BigDecimal getValorINSS(BigDecimal salarioBruto) {
 		
 		if(salarioBruto == null) 
@@ -36,6 +43,13 @@ public class CalculadoraSalario {
 		return valorINSS.setScale(2, BigDecimal.ROUND_HALF_UP);
 	}
 
+	/*
+	 * O método funciona mas esta muito complexo devido aos 
+	 * ifs aninhados. 
+	 * 
+	 * Como desafio gostaria de ver uma nova implementação desse método sem o uso de ifs em cascata.
+	 * Veja sobre Java 8 (filter)  
+	 */
 	public BigDecimal getValorPlanoDeSaude(Integer idade) {
 		
 		BigDecimal valorPlanoDeSaude = BigDecimal.ZERO;
