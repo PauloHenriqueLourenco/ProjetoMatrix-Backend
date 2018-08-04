@@ -1,5 +1,6 @@
 package br.com.projetomatrix.academico.models;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Avaliacao {
@@ -11,9 +12,10 @@ public class Avaliacao {
 	private String descricao;
 	private ModoAvaliacao modo;
 	private Professor responsavel;
+	private BigDecimal nota;
 	
 	public Avaliacao(Aluno alunoAssociado, Turma turmaAssociada, int codigo, Date dataRealizacao, String descricao,
-			ModoAvaliacao modo, Professor responsavel) {
+			ModoAvaliacao modo, Professor responsavel, BigDecimal nota) {
 		this.alunoAssociado = alunoAssociado;
 		this.turmaAssociada = turmaAssociada;
 		this.codigo = codigo;
@@ -21,6 +23,7 @@ public class Avaliacao {
 		this.descricao = descricao;
 		this.modo = modo;
 		this.responsavel = responsavel;
+		this.nota = nota;
 	}
 
 	public Aluno getAlunoAssociado() {
@@ -77,5 +80,13 @@ public class Avaliacao {
 
 	public void setResponsavel(Professor responsavel) {
 		this.responsavel = responsavel;
+	}
+
+	public BigDecimal getNota() {
+		return nota;
+	}
+
+	public void setNota(BigDecimal nota) {
+		this.nota = nota;
 	}
 }
