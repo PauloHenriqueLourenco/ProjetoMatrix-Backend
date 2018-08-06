@@ -7,14 +7,14 @@ public class Avaliacao {
 
 	private Aluno alunoAssociado;
 	private Turma turmaAssociada;
-	private int codigo;
+	private String codigo;
 	private Date dataRealizacao;
 	private String descricao;
 	private ModoAvaliacao modo;
 	private Professor responsavel;
 	private BigDecimal nota;
 	
-	public Avaliacao(Aluno alunoAssociado, Turma turmaAssociada, int codigo, Date dataRealizacao, String descricao,
+	public Avaliacao(Aluno alunoAssociado, Turma turmaAssociada, String codigo, Date dataRealizacao, String descricao,
 			ModoAvaliacao modo, Professor responsavel, BigDecimal nota) {
 		this.alunoAssociado = alunoAssociado;
 		this.turmaAssociada = turmaAssociada;
@@ -42,11 +42,11 @@ public class Avaliacao {
 		this.turmaAssociada = turmaAssociada;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

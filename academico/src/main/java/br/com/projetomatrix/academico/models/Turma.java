@@ -1,20 +1,21 @@
 package br.com.projetomatrix.academico.models;
 
 import java.util.Date;
+import java.util.List;
 
 public class Turma {
 
 	private Disciplina disciplinaAssociada;
 	private Professor professorAssociado;
-	private Aluno[] alunos;
-	private int codigo;
+	private List<Aluno> alunos;
+	private String codigo;
 	private String anoLetivo;
 	private int semestre;
 	private Date dataAbertura;
 	private Date dataEncerramento;
 	private Horario horarioDeAula;
 	
-	public Turma(Disciplina disciplinaAssociada, Professor professorAssociado, Aluno[] alunos, int codigo,
+	public Turma(Disciplina disciplinaAssociada, Professor professorAssociado, List<Aluno> alunos, String codigo,
 			String anoLetivo, int semestre, Date dataAbertura, Date dataEncerramento, Horario horarioDeAula) {
 		this.disciplinaAssociada = disciplinaAssociada;
 		this.professorAssociado = professorAssociado;
@@ -43,19 +44,19 @@ public class Turma {
 		this.professorAssociado = professorAssociado;
 	}
 
-	public Aluno[] getAlunos() {
+	public List<Aluno> getAlunos() {
 		return alunos;
 	}
 
-	public void setAlunos(Aluno[] alunos) {
+	public void setAlunos(List<Aluno> alunos) {
 		this.alunos = alunos;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

@@ -1,25 +1,33 @@
 package br.com.projetomatrix.academico.models;
 
+import java.util.List;
+
 public class Curso {
 	
-	private Disciplina[] disciplinasAssociadas;
+	private List<Disciplina> disciplinasAssociadas;
 	private Coordenador coordenador;
-	private int codigo;
+	private String codigo;
 	private String descricao;
 	private int cargaHoraria;
 	private String ementa;
 	private String bibliografia;
 	
-	public Curso(Disciplina[] disciplinas, Coordenador coordenador) {
-		this.disciplinasAssociadas = disciplinas;
+	public Curso(List<Disciplina> disciplinasAssociadas, Coordenador coordenador, String codigo, String descricao,
+			int cargaHoraria, String ementa, String bibliografia) {
+		this.disciplinasAssociadas = disciplinasAssociadas;
 		this.coordenador = coordenador;
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.cargaHoraria = cargaHoraria;
+		this.ementa = ementa;
+		this.bibliografia = bibliografia;
 	}
 
-	public Disciplina[] getDisciplinas() {
+	public List<Disciplina> getDisciplinas() {
 		return disciplinasAssociadas;
 	}
 
-	public void setDisciplinas(Disciplina[] disciplinas) {
+	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinasAssociadas = disciplinas;
 	}
 
@@ -31,19 +39,19 @@ public class Curso {
 		this.coordenador = coordenador;
 	}
 
-	public Disciplina[] getDisciplinasAssociadas() {
+	public List<Disciplina> getDisciplinasAssociadas() {
 		return disciplinasAssociadas;
 	}
 
-	public void setDisciplinasAssociadas(Disciplina[] disciplinasAssociadas) {
+	public void setDisciplinasAssociadas(List<Disciplina> disciplinasAssociadas) {
 		this.disciplinasAssociadas = disciplinasAssociadas;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

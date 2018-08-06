@@ -2,23 +2,23 @@ package br.com.projetomatrix.academico.models;
 
 public class Horario {
 
-	private int codigo;
+	private String codigo;
 	private String diaDaSemana;
 	private String horaInicio;
 	private String horaFim;
 	
-	public Horario(int codigo, String diaDaSemana, String horaInicio, String horaFim) {
+	public Horario(String codigo, String diaDaSemana, String horaInicio, String horaFim) {
 		this.codigo = codigo;
 		this.diaDaSemana = diaDaSemana;
 		this.horaInicio = horaInicio;
 		this.horaFim = horaFim;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

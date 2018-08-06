@@ -1,15 +1,17 @@
 package br.com.projetomatrix.academico.models;
 
+import java.util.List;
+
 public class Disciplina {
 
 	private Curso cursoPertencente;
-	private Professor[] professoresAssociados;
-	private int codigo;
-	private Disciplina[] pre_requisitos;
+	private List<Professor> professoresAssociados;
+	private String codigo;
+	private List<Disciplina> pre_requisitos;
 	private String descricao;
 	
-	public Disciplina(Curso cursoPertencente, Professor[] professoresAssociados, int codigo,
-			Disciplina[] pre_requisitos, String descricao) {
+	public Disciplina(Curso cursoPertencente, List<Professor> professoresAssociados, String codigo,
+			List<Disciplina> pre_requisitos, String descricao) {
 		this.cursoPertencente = cursoPertencente;
 		this.professoresAssociados = professoresAssociados;
 		this.codigo = codigo;
@@ -25,27 +27,27 @@ public class Disciplina {
 		this.cursoPertencente = cursoPertencente;
 	}
 	
-	public Professor[] getProfessoresAssociados() {
+	public List<Professor> getProfessoresAssociados() {
 		return professoresAssociados;
 	}
 	
-	public void setProfessoresAssociados(Professor[] professoresAssociados) {
+	public void setProfessoresAssociados(List<Professor> professoresAssociados) {
 		this.professoresAssociados = professoresAssociados;
 	}
 	
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 	
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	
-	public Disciplina[] getPre_requisitos() {
+	public List<Disciplina> getPre_requisitos() {
 		return pre_requisitos;
 	}
 	
-	public void setPre_requisitos(Disciplina[] pre_requisitos) {
+	public void setPre_requisitos(List<Disciplina> pre_requisitos) {
 		this.pre_requisitos = pre_requisitos;
 	}
 	

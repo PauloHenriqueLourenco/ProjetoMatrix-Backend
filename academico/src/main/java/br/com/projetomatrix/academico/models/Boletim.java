@@ -1,15 +1,28 @@
 package br.com.projetomatrix.academico.models;
 
+import java.util.List;
+
 public class Boletim {
 	
+	private String codigo;
 	private Aluno alunoAssociado;
 	private Turma turmaAssociada;
-	private Avaliacao[] avaliacoes;
+	private List<Avaliacao> avaliacoes;
 	
-	public Boletim(Aluno alunoAssociado, Turma turmaAssociada, Avaliacao[] avaliacoes) {
+	public Boletim(String codigo, Aluno alunoAssociado, Turma turmaAssociada, List<Avaliacao> avaliacoes) {
+		super();
+		this.codigo = codigo;
 		this.alunoAssociado = alunoAssociado;
 		this.turmaAssociada = turmaAssociada;
 		this.avaliacoes = avaliacoes;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public Aluno getAlunoAssociado() {
@@ -28,11 +41,11 @@ public class Boletim {
 		this.turmaAssociada = turmaAssociada;
 	}
 
-	public Avaliacao[] getAvaliacoes() {
+	public List<Avaliacao> getAvaliacoes() {
 		return avaliacoes;
 	}
 
-	public void setAvaliacoes(Avaliacao[] avaliacoes) {
+	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
 		this.avaliacoes = avaliacoes;
 	}
 }
