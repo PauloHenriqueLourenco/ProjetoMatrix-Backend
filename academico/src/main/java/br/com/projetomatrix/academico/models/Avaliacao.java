@@ -25,6 +25,10 @@ public class Avaliacao {
 		this.responsavel = responsavel;
 		this.nota = nota;
 	}
+	
+	public Avaliacao() {
+		
+	}
 
 	public Aluno getAlunoAssociado() {
 		return alunoAssociado;

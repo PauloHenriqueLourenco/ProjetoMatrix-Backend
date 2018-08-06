@@ -1,11 +1,14 @@
 package br.com.projetomatrix.academico.models;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.boot.context.embedded.SslStoreProvider;
 
 public class Aluno extends Pessoa {
 
 	private Curso cursoMatriculado;
-	private List<Avaliacao> avaliacoes;
+	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 	
 	public Aluno(Curso cursoMatriculado, List<Avaliacao> avaliacoes) {
 		super();
@@ -13,6 +16,10 @@ public class Aluno extends Pessoa {
 		this.avaliacoes = avaliacoes;
 	}
 
+	public Aluno() {
+		
+	}
+	
 	public Curso getCursoMatriculado() {
 		return cursoMatriculado;
 	}
@@ -27,7 +34,6 @@ public class Aluno extends Pessoa {
 	
 	public Avaliacao adicionarAvaliacao(Avaliacao avaliacao) {
 		avaliacoes.add(avaliacao);
-		
 		return avaliacao;
 	}
 

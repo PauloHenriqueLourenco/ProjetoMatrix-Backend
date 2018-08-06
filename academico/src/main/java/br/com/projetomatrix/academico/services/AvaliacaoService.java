@@ -12,7 +12,7 @@ public class AvaliacaoService {
 	private Long sequencial = new Long(0);
 
 	public Avaliacao cadastrarAvaliacao(Avaliacao Avaliacao) {
-		if (Avaliacao == null || AvaliacaoHash.containsKey(Avaliacao.getCodigo()))
+		if (Avaliacao == null)
 			return Avaliacao;
 
 		sequencial.sum(sequencial, 1);

@@ -35,7 +35,7 @@ public class AlunoService {
 	}
 
 	public Aluno atualizarAluno(Aluno aluno) {
-		if (validaAluno(aluno) == false)
+		if ((validaAluno(aluno) && validaMatricula(aluno.getMatricula())) == false)
 			throw new IllegalArgumentException();
 
 		removerAluno(aluno.getMatricula());
@@ -57,12 +57,12 @@ public class AlunoService {
 
 		Aluno aluno = alunoHash.get(matricula);
 		List<Avaliacao> avaliacoes = aluno.getAvaliacoes();
-
+		
 		BigDecimal somaDasNotas = BigDecimal.ZERO;
-
-		avaliacoes.forEach(avaliacao -> {
-			somaDasNotas.add(avaliacao.getNota());
-		});
+		
+		somaDasNotas = avaliacoes.stream()
+			    .map(Avaliacao::getNota)
+			    .reduce(BigDecimal.ZERO, BigDecimal::add);
 
 		return somaDasNotas.divide(BigDecimal.valueOf(3), BigDecimal.ROUND_HALF_UP);
 	}
@@ -73,7 +73,7 @@ public class AlunoService {
 
 		Aluno aluno = alunoHash.get(matricula);
 		List<Avaliacao> avaliacoes = aluno.getAvaliacoes();
-
+		
 		StatusAcademico statusAcademico;
 
 		if (avaliacoes.size() < 3)
@@ -93,7 +93,7 @@ public class AlunoService {
 	}
 
 	public boolean validaAluno(Aluno aluno) {
-		return aluno != null && aluno.getMatricula() != null && aluno.getMatricula().length() > 0;
+		return aluno != null;
 	}
 
 	public String gerarMatricula(Aluno aluno) {
