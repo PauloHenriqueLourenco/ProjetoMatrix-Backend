@@ -24,15 +24,18 @@ public class EmpresaResource {
 	
 	@PostMapping(path = "/empresas")
 	public ResponseEntity<Empresa> criarEmpresa(@RequestBody Empresa empresa) {
-		Empresa empresaNova = empresaService.salvar(empresa);
-		return new ResponseEntity<>(empresaNova, HttpStatus.CREATED);
+		return new ResponseEntity<>(empresaService.salvar(empresa), HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/empresas")
 	public ResponseEntity<List<Empresa>> getEmpresas(){
-		List<Empresa> empresas = empresaService.listar();
-		return new ResponseEntity<List<Empresa>>(empresas, HttpStatus.OK);
+		return new ResponseEntity<List<Empresa>>(empresaService.listar(), HttpStatus.OK);
 	}
+	
+/*	@GetMapping("/empresas")
+	public ResponseEntity<Empresa> getEmpresaPorNome(@PathVariable String nome){
+		return new ResponseEntity<>(empresaService.listarPorNome(nome), HttpStatus.OK);
+	}*/
 	
 	@DeleteMapping("/empresas/{id}")
 	public ResponseEntity<?> removerEmpresa(@PathVariable Long id){
@@ -42,7 +45,6 @@ public class EmpresaResource {
 	
 	@PutMapping("/empresas")
 	public ResponseEntity<Empresa> atualizarEmpresa(@RequestBody Empresa empresa){
-		Empresa empresaNova = empresaService.atualizar(empresa);
-		return new ResponseEntity<Empresa>(empresaNova, HttpStatus.OK);
+		return new ResponseEntity<Empresa>(empresaService.atualizar(empresa), HttpStatus.OK);
 	}
 }
